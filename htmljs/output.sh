@@ -31,7 +31,7 @@ for ((index=0; index<${#htmlfiles[@]}; index++)); do
    #echo "input: $input output file: $output with variables $variable "
    xxd -i  "$input" > $output 
    echo "processing $output"
-   sed -i "s/unsigned char .\+\[\]/const unsigned char $variable\[\] PROGMEM/" $output
+   sed -i'.bak' "s/unsigned char .\+\[\]/const unsigned char $variable\[\] PROGMEM/" $output
 done
 }
 
